@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) in pages" :key="index">
         <div class="icon" v-for="item in page" :key="item.id">
           <img class="icon-img-content" :src="item.imgUrl" alt="">
@@ -28,6 +28,9 @@ export default {
   },
   data () {
     return {
+      swiperOption: {
+        loop: false
+      },
       iconList: [
         {
           id: '001',
