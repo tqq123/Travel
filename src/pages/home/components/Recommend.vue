@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="recommend-title">热销推荐</div>
-    <ul>
-      <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+    <ul v-if="list.length">
+      <li class="item border-bottom" v-for="item in list" :key="item.id">
         <img :src="item.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,28 +17,12 @@
 
 <script>
 export default {
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/28/288fbeccc335f774a3.img.jpg_200x200_4a81bde9.jpg',
-          title: '11111111111111111111111111111111111',
-          desc: '11111111111111111111111111111111111111111'
-        },
-        {
-          id: '002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/28/288fbeccc335f774a3.img.jpg_200x200_4a81bde9.jpg',
-          title: '11111111111111111111111111111111111',
-          desc: '11111111111111111111111111111111111'
-        },
-        {
-          id: '003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/28/288fbeccc335f774a3.img.jpg_200x200_4a81bde9.jpg',
-          title: '11111111111111111111111111111111111',
-          desc: '11111111111111111111111111111111111'
-        }
-      ]
+  props: {
+    list: {
+      type: Array,
+      default () {
+        return []
+      }
     }
   }
 }
@@ -55,7 +39,7 @@ export default {
     overflow: hidden
     display: flex
     height: 1.9rem
-    margin: .2rem
+    margin: .2rem .2rem 0
     padding-bottom: .2rem
     img
       width: 1.7rem
