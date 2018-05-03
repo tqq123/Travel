@@ -28,7 +28,6 @@ export default {
   methods: {
     getCityInfo () {
       axios.get('/api/city.json').then((res) => {
-        console.log(res)
         res = res.data
         if (res.ret && res.data) {
           const data = res.data

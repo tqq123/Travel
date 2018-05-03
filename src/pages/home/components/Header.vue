@@ -19,12 +19,10 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
-  props: {
-    city: {
-      type: String,
-      default: ''
-    }
+  computed: {
+    ...mapState(['city'])
   }
 }
 </script>
@@ -53,7 +51,8 @@ export default {
       border-radius: .1rem
       color: #ccc
     .header-right
-      width: 1.24rem
+      min-width: 1.04rem
+      padding: 0 .1rem
       float: right
       text-align: center
       color: #fff
