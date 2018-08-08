@@ -27,8 +27,8 @@ export default {
   },
   methods: {
     getCityInfo () {
-      axios.get('/api/city.json').then((res) => {
-        res = res.data
+      axios.get('/api/city').then((res) => {
+        res = res.data.data
         if (res.ret && res.data) {
           const data = res.data
           this.cities = data.cities

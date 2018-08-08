@@ -2,7 +2,8 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul v-if="list.length">
-      <li class="item border-bottom" v-for="item in list" :key="item.id">
+      <li class="item border-bottom" v-for="item in list" :key="item.id"
+      @click="selectItem(item.id)">
         <img :src="item.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -23,6 +24,11 @@ export default {
       default () {
         return []
       }
+    }
+  },
+  methods: {
+    selectItem (id) {
+      this.$router.push(`/detail/${id}`)
     }
   }
 }

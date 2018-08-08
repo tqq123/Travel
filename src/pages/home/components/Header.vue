@@ -30,6 +30,11 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
   .header
+    z-index: 10
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
     display: flex
     line-height: $headerHeight
     background: $bgColor
